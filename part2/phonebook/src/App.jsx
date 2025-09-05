@@ -10,7 +10,6 @@ const App = () => {
     { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
     { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 },
   ]);
-  const [filteredPersons, setFilteredPersons] = useState([]);
 
   const [newName, setNewName] = useState('');
   const [newNumber, setNewNumber] = useState('');
@@ -46,15 +45,13 @@ const App = () => {
     setSearch(event.target.value);
   };
 
-  useEffect(() => {
+  const filteredPersons =
     search !== ''
-      ? setFilteredPersons(
-          persons.filter((person) =>
-            person.name.toLowerCase().includes(search.toLowerCase())
-          )
+      ? persons.filter((person) =>
+          person.name.toLowerCase().includes(search.toLowerCase())
         )
-      : setFilteredPersons(persons);
-  }, [search, persons]);
+      : persons;
+
   return (
     <div>
       <h2>Phonebook</h2>
