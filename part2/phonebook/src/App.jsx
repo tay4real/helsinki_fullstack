@@ -35,15 +35,23 @@ const App = () => {
         number: newNumber,
       };
 
-      personService.create(newObject).then((response) => {
-        setPersons(persons.concat(response));
-        setSuccessMessage(`Added ${response.name}`);
-        setTimeout(() => {
-          setSuccessMessage(null);
-        }, 5000);
-        setNewName('');
-        setNewNumber('');
-      });
+      personService
+        .create(newObject)
+        .then((response) => {
+          setPersons(persons.concat(response));
+          setSuccessMessage(`Added ${response.name}`);
+          setTimeout(() => {
+            setSuccessMessage(null);
+          }, 5000);
+          setNewName('');
+          setNewNumber('');
+        })
+        .catch((error) => {
+          setErrorMessage(error.response.data.error);
+          setTimeout(() => {
+            setErrorMessage(null);
+          }, 5000);
+        });
     } else {
       const updPerson = persons.filter((person) => person.name === newName);
 
@@ -91,7 +99,7 @@ const App = () => {
 
     if (confirm(`Delete ${delPerson[0].name}?`)) {
       personService.deletePerson(id).then((response) => {
-        setPersons(persons.filter((person) => person.id !== response.id));
+        setPersons(persons.filter((person) => person.id !== id));
       });
     }
   };
