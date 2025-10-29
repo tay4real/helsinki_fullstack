@@ -1,10 +1,9 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFvdHVidXNpbiIsImlkIjoiNjhmNjMzZTQ4MTRkNjFhOTliMDU1NDY2IiwiaWF0IjoxNzYxMDYzMTMwLCJleHAiOjE3NjEwNjY3MzB9.CGbxxU2Onqq9bZyF5cdtNdxC0z0_gSUZHpstcNu4gnA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFvdHVidXNpbiIsImlkIjoiNjhmNjMzZTQ4MTRkNjFhOTliMDU1NDY2IiwiaWF0IjoxNzYxMTMzNzY3LCJleHAiOjE3NjExMzczNjd9.MCm3hr45SuGVZzZ06aqN7J2f_xqo9rmYr6P5hDaWxY0
 
 {
-    "title": "Blog added with token",
-    "author": "Ojo Omolayo",
-    "url": "http://ojomolayo.com/blog-token",
-    "likes": 10
+    "title": "Understnding Middleware in Express.js",
+    "author": "Otubusin Ademuyiwa",
+    "url": "http:/otubusinademuyiwa.com/middleware-expressjs"
 }
